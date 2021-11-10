@@ -9,7 +9,7 @@ import bgHome from '../../asset/bg_home.png'
 
 
 
-export default function Header(){
+export default function Header(props){
     return <div style={AppStyle({ backgroundImage: `url(${bgHome})` }, paddingBottom(20))}>
         <div style={AppStyle(flexHori(), flexCenter(), marginHori(15))}>
             <img style={AppStyle(circleImage(42))} src="https://avatar-ex-swe.nixcdn.com/singer/avatar/2018/05/05/5/6/0/3/1525531851818_600.jpg"/>
