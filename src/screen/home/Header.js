@@ -28,19 +28,19 @@ export default function Header(props){
         <div style={AppStyle(weightItem(1), flexVerti(), flexCenter())}>
             <img style={AppStyle(width(32), height(32), fitContain())} 
             src={icScan}/>
-            <p>Quet QR</p>
+            <p>Quét QR</p>
         </div>   
         <div style={AppStyle(weightItem(1),flexVerti(), flexCenter())}>
             <img style={AppStyle(width(32), height(32), fitContain())} src={icPetAdd}/>
-            <p>Them Pet</p>
+            <p>Thêm Pet</p>
         </div>   
         <div style={AppStyle(weightItem(1),flexVerti(), flexCenter())}>
             <img style={AppStyle(width(32), height(32), fitContain())} src={icPetCard}/>
-            <p>The Pet</p>
+            <p>Thẻ Pet</p>
         </div>   
         <div style={AppStyle(weightItem(1),flexVerti(), flexCenter())}>
             <img style={AppStyle(width(32), height(32), fitContain())} src={icAddFriend}/>
-            <p>Moi ban be</p>
+            <p>Mời bạn bè</p>
         </div>   
          </div>
 

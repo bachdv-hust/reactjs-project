@@ -6,6 +6,6 @@ import TextView from "../../components/Text";
 export default function AddPetScreen() {
     return <Column>
         <TextView style={weightItem(1)}>ok</TextView>
-        <TextView>ok 2</TextView>
+        <TextView>ok</TextView>
     </Column>
 }
