@@ -9,9 +9,9 @@ interface DiscoveryScreenProp {
 }
 
 let posts = [
-    { avatarUrl: "https://cuoifly.tuoitre.vn/820/0/ttc/r/2021/01/22/hai-tu-1611284734.jpg", petName: "Hai Tu", content: "Hải Tú và Thiều Bảo Trâm là hai mỹ nhân Việt được chú ý nhờ liên quan đến Sơn Tùng M-TP.", imgUrl: "https://photo-cms-kienthuc.zadn.vn/zoom/800/uploaded/dinhcuc/2020_12_21/tu/do-ve-goi-cam-hai-tu-va-ban-gai-tin-don-cua-son-tung.jpg" },
-    { avatarUrl: "https://cuoifly.tuoitre.vn/820/0/ttc/r/2021/01/22/hai-tu-1611284734.jpg", petName: "Hai Tu 1", content: "Hải Tú và Thiều Bảo Trâm là hai mỹ nhân Việt được chú ý nhờ liên quan đến Sơn Tùng M-TP.", imgUrl: "https://photo-cms-kienthuc.zadn.vn/zoom/800/uploaded/dinhcuc/2020_12_21/tu/do-ve-goi-cam-hai-tu-va-ban-gai-tin-don-cua-son-tung.jpg" },
-    { avatarUrl: "https://cuoifly.tuoitre.vn/820/0/ttc/r/2021/01/22/hai-tu-1611284734.jpg", petName: "Hai Tu 2", content: "Hải Tú và Thiều Bảo Trâm là hai mỹ nhân Việt được chú ý nhờ liên quan đến Sơn Tùng M-TP.", imgUrl: "https://photo-cms-kienthuc.zadn.vn/zoom/800/uploaded/dinhcuc/2020_12_21/tu/do-ve-goi-cam-hai-tu-va-ban-gai-tin-don-cua-son-tung.jpg" },
+    { avatarUrl: "https://thuthuattienich.com/wp-content/uploads/2017/06/anh-dai-dien-facebook-cho-meo-de-thuong-1.jpg", petName: "Micky", content: "Hẹn cùng em đi đến hết cuộc đời.", imgUrl: "https://icapi.org/wp-content/uploads/2019/11/anh-dep-bau-troi-13-4.jpg" },
+    { avatarUrl: "https://thuthuattienich.com/wp-content/uploads/2017/06/anh-dai-dien-facebook-cho-meo-de-thuong-1.jpg", petName: "John", content: "Hẹn cùng em đi đến hết cuộc đời.", imgUrl: "https://icapi.org/wp-content/uploads/2019/11/anh-dep-bau-troi-13-4.jpg" },
+    { avatarUrl: "https://thuthuattienich.com/wp-content/uploads/2017/06/anh-dai-dien-facebook-cho-meo-de-thuong-1.jpg", petName: "Jesus", content: "Hẹn cùng em đi đến hết cuộc đời", imgUrl: "https://icapi.org/wp-content/uploads/2019/11/anh-dep-bau-troi-13-4.jpg" },
 ]
 
 export default function DiscoveryScreen(prop: DiscoveryScreenProp) {
