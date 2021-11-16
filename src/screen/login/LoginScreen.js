@@ -4,7 +4,7 @@ export default function LoginScreen(){
     return <div style={AppStyle(flexHori(), flexCenterInParent(),
          minHeight("100vh"),background("linear-gradient(180deg, #00C181 0%, #1F00C181 100%)"))}>
         <div style={AppStyle(flexVerti(), flexCenterInParent() )}>
-            <h1> Dung </h1>
+            <h1> Dang nhap </h1>
             <div > 
                 <LoginButton imgLink= "https://weeboo.vn/icons/login/icon-facebook.svg" text = "Đăng nhập bằng Facebook" backgroundColor="rgb(51 87 149)" 
                 textColor="#FFFFFF"/>
