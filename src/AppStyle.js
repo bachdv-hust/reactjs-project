@@ -51,6 +51,12 @@ function height(value) {
     }
 }
 
+function minHeight(value) {
+    return {
+        minHeight: value
+    }
+}
+
 function radius(value) {
     return {
         borderRadius :value
@@ -270,6 +276,7 @@ export {
     // sizing
     width,
     height,
+    minHeight,
     radius,
     shadow,
     background,

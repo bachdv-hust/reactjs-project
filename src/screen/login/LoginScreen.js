@@ -1,8 +1,8 @@
-import { AppStyle, background, border, borderWidth, cursorPointer, fitContain, flexCenter, flexCenterInParent, flexHori, flexVerti, height, marginBottom, marginEnd, paddingBottom, paddingHori, paddingStart, paddingTop, paddingVerti, radius, regular, textColor, width } from "../../AppStyle";
+import { AppStyle, background, border, borderWidth, cursorPointer, fitContain, flexCenter, flexCenterInParent, flexHori, flexVerti, height, marginBottom, marginEnd, minHeight, paddingBottom, paddingHori, paddingStart, paddingTop, paddingVerti, radius, regular, textColor, width } from "../../AppStyle";
 
 export default function LoginScreen(){
     return <div style={AppStyle(flexHori(), flexCenterInParent(),
-         height("100%"),background("linear-gradient(180deg, #00C181 0%, #1F00C181 100%)"))}>
+         minHeight("100vh"),background("linear-gradient(180deg, #00C181 0%, #1F00C181 100%)"))}>
         <div style={AppStyle(flexVerti(), flexCenterInParent() )}>
             <h1> Dung </h1>
             <div > 
@@ -12,7 +12,6 @@ export default function LoginScreen(){
             </div>
 
         </div>
-
     </div>
 }
 
