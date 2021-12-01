@@ -4,6 +4,7 @@ import maleLogo from '../../asset/ic_male.svg'
 import femaleLogo from '../../asset/ic_female.svg' 
 import ic_add from '../../asset/ic_add.png' 
 import { Component, useState } from 'react'
+import { useNavigate } from 'react-router'
 
 export default function MyPet() {
     const [pets, setPets] = useState([]);
@@ -40,7 +41,11 @@ function MyPetItem(props) {
         genderImg = femaleLogo
     }
 
-    return <div style={AppStyle(flexHori(), marginHori(6), paddingVerti(16), paddingStart(16), paddingEnd(54), flexCenter(), border("#EEEFF4"),
+    const navigate = useNavigate()
+
+    return <div onClick={
+        () => navigate('../pet-detail/1')
+    } style={AppStyle(flexHori(), marginHori(6), paddingVerti(16), paddingStart(16), paddingEnd(54), flexCenter(), border("#EEEFF4"),
         radius(8), shadow(8))}>
         <img style={AppStyle(
             width(42), height(42), radius(21), background('#000000')

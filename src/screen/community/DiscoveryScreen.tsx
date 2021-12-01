@@ -1,6 +1,7 @@
-import { useState } from "react"
-import { Col, Container, Row } from "react-bootstrap"
-import { flexCenter } from "../../AppStyle"
+import { FC, useEffect, useState } from "react"
+import { Tab, Tabs } from "react-bootstrap"
+import { Colors } from "../../AppColor"
+import { AppStyle, background, flexCenter, weightItem } from "../../AppStyle"
 import Column from "../../components/Column"
 import Post from "./Post"
 import Search from "./Search"
@@ -23,22 +24,47 @@ let posts = [
 
 export default function DiscoveryScreen(prop: DiscoveryScreenProp) {
 
-    let [listPostFilter, setListPostFilter] = useState(posts)
 
-    const onFilterChange = (name: string) => {
-        let filter =  posts.filter( (item) => item.petName.includes(name));
-        setListPostFilter(filter);
+    const onInputEditChange = (search: string) => {
+        console.log(search)
     }
 
-    return <Column style={flexCenter()}>
-        <Search onInputListener = {onFilterChange}/>
-        {
-            listPostFilter.map((postItem) =>
-                <Post
-                    petName={postItem.petName} avatarURL={postItem.avatarUrl}
-                    imgURL={postItem.imgUrl} content={postItem.content}
-                />
-            )
-        }
+    let [activeTab, setActiveTab] = useState("tab_discovery")
+
+    return <Column>
+        <Search onInputListener={onInputEditChange} />
+
+        <div style={AppStyle(background(Colors.color_E5E5E5), weightItem(1))} >
+            <Tabs
+                defaultActiveKey={activeTab}
+                onSelect={(eventKey) => {
+                    if (eventKey !== null) {
+                        setActiveTab(eventKey)
+                    }
+                }}>
+                <Tab eventKey="tab_discovery" title="Khám phá">
+                    <DiscoveryTab />
+                </Tab>
+                <Tab eventKey="tab_follow" title="Theo dõi"></Tab>
+            </Tabs>
+        </div>
+
     </Column>
+}
+
+
+const DiscoveryTab: FC = () => {
+    let [listPostFilter, setListPostFilter] = useState(posts)
+    return (
+        <Column>
+            {
+                listPostFilter.map((postItem) =>
+                    <Post
+                        petName={postItem.petName} avatarURL={postItem.avatarUrl}
+                        imgURL={postItem.imgUrl} content={postItem.content}
+                    />
+                )
+            }
+        </Column>
+    )
 }

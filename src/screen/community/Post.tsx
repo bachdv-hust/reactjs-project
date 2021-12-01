@@ -2,7 +2,7 @@ import { ButtonGroup, ButtonToolbar, Card, Col, Container, Image } from "react-b
 import { AppStyle, background, borderWidth, flexCenter, flexCenterInParent, flexHori, flexVerti, height, margin, marginBottom, marginEnd, marginStart, marginTop, marginVertical, radius, regular, semiBold, shadow, textColor, weightItem, width } from "../../AppStyle";
 import { Colors } from "../../AppColor";
 import TextView from "../../components/Text";
-import Row from "../../components/Row";
+import Rows from "../../components/Row";
 import Column from "../../components/Column";
 import icHotLike from "../../asset/ic_hot_like.svg";
 import icComment from "../../asset/ic_comment.svg";
@@ -31,11 +31,11 @@ export default function Post(props: PostProp) {
 
             <Column>
                 <hr style={marginVertical(12)} />
-                <Row >
+                <Rows >
                     <Reaction name={"Like"} />
                     <Reaction name={"Comment"} />
                     <Reaction name={"Message"} />
-                </Row>
+                </Rows>
                 <hr style={marginVertical(12)} />
             </Column>
 

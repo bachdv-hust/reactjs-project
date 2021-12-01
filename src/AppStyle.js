@@ -57,9 +57,27 @@ function minHeight(value) {
     }
 }
 
+function maxHeight(value) {
+    return {
+        maxHeight: value
+    }
+}
+
 function radius(value) {
     return {
         borderRadius :value
+    }
+}
+
+function circle() {
+    return {
+        borderRadius : '50%'
+    }
+}
+
+function fitImage() {
+    return {
+        objectFit: 'cover'
     }
 }
 
@@ -210,8 +228,6 @@ function baseText() {
     }
 }
 
-
-
 function semiBold(size) {
     return AppStyle(baseText(),{
         fontWeight: 500,
@@ -259,8 +275,8 @@ function circleImage(value){
     return {
         width: value,
         height: value,
-        borderRadius :value/2
-
+        borderRadius : '50%',
+        objectFit: 'cover'
     }
 }
 
@@ -278,8 +294,10 @@ export {
     height,
     minHeight,
     radius,
+    circle,
     shadow,
     background,
+    maxHeight,
 
     // margin css
     margin,
@@ -324,6 +342,7 @@ export {
     //image util
     circleImage,
     fitContain, 
+    fitImage,
 
     //cursor
     cursorPointer

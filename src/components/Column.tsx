@@ -1,9 +1,12 @@
+import { FC } from "react";
 import { AppStyle, flexHori, flexVerti } from "../AppStyle";
-import { ParentProps } from "./Props";
+import { ElementProps } from "./Props";
 
 
-export default function Column(props: ParentProps) {
-    return <div style={AppStyle(flexVerti(), props.style)}>
+const Column:FC<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>> = (props) => {
+    return <div {...props} style={AppStyle(flexVerti(), props.style)}>
         {props.children}
     </div>
 }
+
+export default Column

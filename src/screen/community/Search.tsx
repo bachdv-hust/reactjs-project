@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FloatingLabel, Form, FormControl } from "react-bootstrap";
 import { AppStyle, borderWidth, cursorPointer, flexCenter, flexHori, marginStart, marginTop, padding, paddingHori, paddingVerti, radius, weightItem, width } from "../../AppStyle";
 import icPetSearch from "../../asset/ic_pet_search.svg";
-import Row from "../../components/Row";
+import Rows from "../../components/Row";
 
 
 interface SearchProp {
@@ -17,7 +17,7 @@ export default function Search(prop: SearchProp) {
     let [input, setInput] = useState('')
 
     return (
-        <Row style={AppStyle(flexHori(), flexCenter(), marginTop(6))}>
+        <Rows style={AppStyle(flexHori(), flexCenter(), marginTop(6))}>
             <input
             style={AppStyle(weightItem(1), radius(15), borderWidth(1), 
                 paddingVerti(6), paddingHori(15))}
@@ -31,6 +31,6 @@ export default function Search(prop: SearchProp) {
             }}
         />
             <img onClick={() => takeDataFromSearch()} style ={AppStyle(marginStart(16), cursorPointer())} src={icPetSearch} />
-        </Row>
+        </Rows>
     )
 }

@@ -1,8 +1,11 @@
+import { FC } from "react";
 import { AppStyle, flexHori } from "../AppStyle";
-import { ParentProps } from "./Props";
+import { ElementProps } from "./Props";
 
-export default function Row(props: ParentProps) {
-    return <div style={AppStyle(flexHori(), props.style)}>
+const Rows:FC<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>> = (props) => {
+    return <div {...props} style={AppStyle(flexHori(), props.style)}>
         {props.children}
     </div>
 }
+
+export default Rows
