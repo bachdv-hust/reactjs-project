@@ -1,12 +1,11 @@
-import { ButtonGroup, ButtonToolbar, Card, Col, Container, Image } from "react-bootstrap";
-import { AppStyle, background, borderWidth, flexCenter, flexCenterInParent, flexHori, flexVerti, height, margin, marginBottom, marginEnd, marginStart, marginTop, marginVertical, radius, regular, semiBold, shadow, textColor, weightItem, width } from "../../AppStyle";
+import { Card, Image } from "react-bootstrap";
+import { AppStyle, background, borderWidth, flexCenter, flexCenterInParent, flexHori, height, marginEnd, marginTop, marginVertical, radius, semiBold, shadow, weightItem, width } from "../../AppStyle";
 import { Colors } from "../../AppColor";
 import TextView from "../../components/Text";
 import Rows from "../../components/Row";
 import Column from "../../components/Column";
-import icHotLike from "../../asset/ic_hot_like.svg";
-import icComment from "../../asset/ic_comment.svg";
-import icMessagefrom from "../../asset/ic_message.svg";
+import MessengerScreen from "../messenger/MessengerScreen";
+
 
 interface PostProp {
     petName: string,
@@ -16,6 +15,12 @@ interface PostProp {
 }
 
 export default function Post(props: PostProp) {
+
+
+    const messageHandler = () => {
+        return <MessengerScreen name = {props.petName}/>
+
+    }
     return <Card style={AppStyle(marginVertical(20), radius(8), shadow(2))}>
         <Card.Body>
             <Header avatarUrl={props.avatarURL} petName={props.petName} />
@@ -34,7 +39,7 @@ export default function Post(props: PostProp) {
                 <Rows >
                     <Reaction name={"Like"} />
                     <Reaction name={"Comment"} />
-                    <Reaction name={"Message"} />
+                    <button onClick = {messageHandler}>Message</button>
                 </Rows>
                 <hr style={marginVertical(12)} />
             </Column>

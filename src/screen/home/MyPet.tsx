@@ -1,20 +1,20 @@
-import { AppStyle, background, bold, border, flexCenter, flexHori, flexVerti, height, margin, marginHori, marginStart, marginTop, padding, paddingEnd, paddingStart, paddingVerti, radius, regular, semiBold, setOverFlowX, shadow, textColor, textWeight, weightItem, width } from '../../AppStyle'
+import { AppStyle, background, border, flexCenter, flexHori, flexVerti, height, margin, marginHori, marginStart, marginTop, padding, paddingEnd, paddingStart, paddingVerti, radius, regular, semiBold, setOverFlowX, shadow, textColor, textWeight, weightItem, width } from '../../AppStyle'
 
 import maleLogo from '../../asset/ic_male.svg' 
 import femaleLogo from '../../asset/ic_female.svg' 
 import ic_add from '../../asset/ic_add.png' 
-import { Component, useState } from 'react'
+import { FC, useState } from 'react'
 import { useNavigate } from 'react-router'
+import Pet from '../../models/Pet'
+
+import { BaseHTMLProps } from '../../components/Props';
 
 export default function MyPet() {
-    const [pets, setPets] = useState([]);
+    const [pets, setPets] = useState<Pet[]>([]);
 
-    
-
+    let navigate = useNavigate()
     const addPet = () => {
-        let newPets = [...pets]
-        newPets.push({ name: "Pinky", age: "3 thang", gender: "male", avatar: "https://images.dog.ceo/breeds/terrier-dandie/n02096437_1643.jpg" })
-        setPets(newPets)
+        navigate('../add-pet')
     }
 
     return <div style={AppStyle(margin(0), padding(0))}>
@@ -25,7 +25,7 @@ export default function MyPet() {
 
         <div style={AppStyle(flexHori(), margin(0), setOverFlowX())}>
             {
-                pets.map(function (pet) { return <MyPetItem name={pet.name} age={pet.age} img={pet.avatar} gender={pet.gender} /> })
+                pets.map(function (pet) { return <MyPetItem onClick={()=>{}} name={pet.name} age={pet.age} img={pet.avatar} gender={pet.gender} /> })
             }
             <CreatePetButton  eventClick={addPet}/>
         </div>
@@ -33,7 +33,14 @@ export default function MyPet() {
     </div>
 }
 
-function MyPetItem(props) {
+interface MyPetItemProps extends BaseHTMLProps{
+    gender: string
+    img: string
+    name: string
+    age: string
+}
+
+const MyPetItem: FC<MyPetItemProps> = (props) => {
     let genderImg;
     if (props.gender === "male") {
         genderImg = maleLogo
@@ -61,9 +68,12 @@ function MyPetItem(props) {
     </div>
 }
 
-class CreatePetButton extends Component {
-    render() {
-        return <div onClick={this.props.eventClick} style={AppStyle(flexHori(), padding(16), flexCenter(), border("#EEEFF4"), radius(8), shadow())}>
+interface CreatePetButtonProps{
+    eventClick: () => void
+}
+
+const CreatePetButton: FC<CreatePetButtonProps> = (props) => {
+        return <div onClick={props.eventClick} style={AppStyle(flexHori(), padding(16), flexCenter(), border("#EEEFF4"), radius(8), shadow())}>
             <img style={AppStyle(
                 width(42), height(42), radius(21)
             )} src={ic_add}></img>
@@ -74,6 +84,5 @@ class CreatePetButton extends Component {
                 </div>
             </div>
         </div>
-    }
 
 }

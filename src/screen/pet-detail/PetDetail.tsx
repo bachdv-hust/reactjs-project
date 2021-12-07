@@ -1,5 +1,5 @@
-import { FC, useEffect } from "react";
-import { AppStyle, background, border, borderWidth, circleImage, flexCenter, height, margin, marginHori, marginTop, maxHeight, padding, radius, regular, semiBold, shadow, textColor, weightItem, width } from "../../AppStyle";
+import { FC } from "react";
+import { AppStyle, border, borderWidth, circleImage, flexCenter, margin, marginHori, marginTop, maxHeight, padding, radius, regular, semiBold, shadow, textColor, weightItem, width } from "../../AppStyle";
 import Column from "../../components/Column";
 import { ButtonImageView, ImageView } from "../../components/ImageView";
 import Rows from "../../components/Row";
@@ -7,7 +7,7 @@ import TextView from "../../components/Text";
 
 import icMessageToOwner from '../../asset/ic_message_to_owner.svg'
 import { Colors } from "../../AppColor";
-import { ElementProps } from "../../components/Props";
+import { BaseHTMLProps } from "../../components/Props";
 import { useParams } from "react-router";
 
 interface PetDetailProp {
@@ -35,8 +35,7 @@ const Header: FC<HeaderProps> = (props) => {
 }
 
 const PetDetail: FC<PetDetailProp> = () => {
-    const petId = useParams()
-    const id = `${petId}`
+    const params = useParams()
 
     return <Column style={AppStyle(border(Colors.color_E5E5E5))}>
         <Header />
@@ -83,7 +82,7 @@ const PetDetail: FC<PetDetailProp> = () => {
         <InfoBox>
             <Column>
                 <TextView style={AppStyle(regular(12), textColor(Colors.color_8A8A8F))}>Pet ID</TextView>
-                <TextView style={AppStyle(semiBold(14), textColor(Colors.color_primary))}>Hello {name}</TextView>
+                <TextView style={AppStyle(semiBold(14), textColor(Colors.color_primary))}>Hello {params.petId}</TextView>
             </Column>
         </InfoBox>
         <ContactBox user={new User()} />
@@ -96,7 +95,7 @@ class User {
     avatar = url
 }
 
-interface ContactBoxProp extends ElementProps {
+interface ContactBoxProp extends BaseHTMLProps {
     user: User
 }
 
@@ -119,7 +118,7 @@ const ContactBox: FC<ContactBoxProp> = (props) => {
 
 
 
-const InfoBox: FC<ElementProps> = (props) => {
+const InfoBox: FC<BaseHTMLProps> = (props) => {
     return <div style={AppStyle(weightItem(1), margin(12), radius(8), borderWidth(1), border(Colors.color_E5E5E5), padding(12), shadow(8))}>
         {props.children}
     </div>

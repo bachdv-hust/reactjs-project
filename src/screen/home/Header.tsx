@@ -1,4 +1,4 @@
-import { AppStyle, background, bold, border, circleImage, fitContain, flexCenter, flexHori, flexVerti, height, margin, marginEnd, marginHori, marginStart, marginTop, marginVertical, padding, paddingBottom, paddingTop, radius, regular, semiBold, shadow, textColor, weightItem, width } from "../../AppStyle"
+import { AppStyle, background, bold, circleImage, fitContain, flexCenter, flexHori, flexVerti, height, margin, marginEnd, marginHori, marginStart, marginVertical, paddingBottom, paddingTop, radius, regular, shadow, textColor, weightItem, width } from "../../AppStyle"
 
 import icScan from '../../asset/ic_qr_scan.png'
 import icAddFriend from '../../asset/ic_add_friend.png'
@@ -9,7 +9,7 @@ import bgHome from '../../asset/bg_home.png'
 
 
 
-export default function Header(props){
+export default function Header(){
     return <div style={AppStyle({ backgroundImage: `url(${bgHome})` }, paddingBottom(20))}>
         <div style={AppStyle(flexHori(), flexCenter(), marginHori(15))}>
             <img style={AppStyle(circleImage(42))} src="https://avatar-ex-swe.nixcdn.com/singer/avatar/2018/05/05/5/6/0/3/1525531851818_600.jpg"/>

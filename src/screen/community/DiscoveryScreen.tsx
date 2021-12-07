@@ -1,7 +1,7 @@
-import { FC, useEffect, useState } from "react"
-import { Tab, Tabs } from "react-bootstrap"
+import { FC, useState } from "react"
+import { Container, Navbar, Tab, Tabs } from "react-bootstrap"
 import { Colors } from "../../AppColor"
-import { AppStyle, background, flexCenter, weightItem } from "../../AppStyle"
+import { AppStyle, background, weightItem } from "../../AppStyle"
 import Column from "../../components/Column"
 import Post from "./Post"
 import Search from "./Search"
@@ -32,9 +32,14 @@ export default function DiscoveryScreen(prop: DiscoveryScreenProp) {
     let [activeTab, setActiveTab] = useState("tab_discovery")
 
     return <Column>
+    <Navbar>
+        <Container>
         <Search onInputListener={onInputEditChange} />
+        </Container>
+    </Navbar>
+        
 
-        <div style={AppStyle(background(Colors.color_E5E5E5), weightItem(1))} >
+        <div style={AppStyle(weightItem(1))} >
             <Tabs
                 defaultActiveKey={activeTab}
                 onSelect={(eventKey) => {

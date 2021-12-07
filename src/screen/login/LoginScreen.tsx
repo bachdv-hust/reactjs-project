@@ -1,4 +1,5 @@
-import { AppStyle, background, border, borderWidth, cursorPointer, fitContain, flexCenter, flexCenterInParent, flexHori, flexVerti, height, marginBottom, marginEnd, minHeight, paddingBottom, paddingHori, paddingStart, paddingTop, paddingVerti, radius, regular, textColor, width } from "../../AppStyle";
+import { FC } from "react";
+import { AppStyle,background, borderWidth, cursorPointer, flexCenterInParent, flexHori, flexVerti, height, marginBottom, marginEnd, minHeight, paddingVerti, radius, regular, textColor, width } from "../../AppStyle";
 
 export default function LoginScreen(){
     return <div style={AppStyle(flexHori(), flexCenterInParent(),
@@ -16,7 +17,14 @@ export default function LoginScreen(){
 }
 
 
-function LoginButton(props) {
+interface LoginButtonProps{
+    imgLink: string
+    text: string
+    textColor: string
+    backgroundColor: string
+}
+
+const LoginButton: FC<LoginButtonProps> = (props) => {
     return <button
     style={AppStyle( cursorPointer(), flexHori(), marginBottom(20), width(300),
     paddingVerti(12), flexCenterInParent(), radius(24), borderWidth(0), background(props.backgroundColor))}>

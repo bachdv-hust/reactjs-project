@@ -1,6 +1,5 @@
 import { FC } from "react";
-import { AppStyle, flexHori, flexVerti } from "../AppStyle";
-import { ElementProps } from "./Props";
+import { AppStyle, flexVerti } from "../AppStyle";
 
 
 const Column:FC<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>> = (props) => {

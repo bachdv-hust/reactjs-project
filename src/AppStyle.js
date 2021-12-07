@@ -8,8 +8,9 @@
  * @param {*} params all style ex: marginHori, marginVertical...
  * @returns 
  */
-function AppStyle(params) {
-    let res = Object.assign.apply(Object, Array.prototype.slice.call(arguments, 0));
+function AppStyle() {
+    let args = Array.prototype.slice.call(arguments).filter((arg) => arg !== null && arg !== undefined)
+    let res = Object.assign.apply(Object, Array.prototype.slice.call(args));
     return res;
 }
 
@@ -202,6 +203,12 @@ function flexHori() {
     }
 }
 
+function flexShrink(value) {
+    return {
+        flexShrink: value
+    }
+}
+
 function flexVerti() {
     return {
         display: 'flex',
@@ -324,6 +331,7 @@ export {
     flexCenter,
     flexCenterInParent,
     weightItem,
+    flexShrink,
 
     // text
     semiBold,
