@@ -1,0 +1,20 @@
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+    width: 100%;
+
+}
+
+
+/*input:required {*/
+/*    border-color: #800000;*/
+/*    border-width: 3px;*/
+/*}*/
+
+/*input:required:invalid {*/
+/*    border-color: #c00000;*/
+/*}*/
+
+/*input:invalid {*/
+/*    background-color: #ffdddd;*/
+/*}*/

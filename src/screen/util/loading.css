@@ -1,0 +1,11 @@
+.popup-content {
+    margin: auto;
+    background: rgba(0, 0, 0, 0);
+    width: auto;
+    padding: 5px;
+    border: none;
+}
+
+.popup-overlay {
+    background: rgba(0, 0, 0, 0.9);
+}
